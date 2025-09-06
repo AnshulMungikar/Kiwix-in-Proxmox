@@ -21,9 +21,6 @@ else
   echo "Warning: resolvectl not found. Skipping DNS configuration."
 fi
 
-# Step 2: Update system
-echo "== Step 2: Updating system =="
-apt update -y
 
 # Step 3: Install dependencies
 echo "== Step 3: Installing Kiwix =="
