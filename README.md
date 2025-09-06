@@ -21,11 +21,11 @@ You don’t need to clone this repo manually.
 Just run the script directly with one command:
 
 ```
-bash <(curl -s https://raw.githubusercontent.com/AnshulMungikar/Kiwix-in-Proxmox/main/setup-kiwix.sh)
+curl -s https://raw.githubusercontent.com/AnshulMungikar/Kiwix-in-Proxmox/main/setup-kiwix.sh | sudo bash
 ```
 OR
 ```
-bash <(wget -qO- https://raw.githubusercontent.com/AnshulMungikar/Kiwix-in-Proxmox/main/setup-kiwix.sh)
+wget -qO- https://raw.githubusercontent.com/AnshulMungikar/Kiwix-in-Proxmox/main/setup-kiwix.sh | sudo bash
 ```
 ## Overview
 
