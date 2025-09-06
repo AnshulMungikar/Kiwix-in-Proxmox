@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Require root privileges
+if [ "$EUID" -ne 0 ]; then
+  echo "❌ Please run this script as root (use sudo)."
+  exit 1
+fi
+
+
 # Interactive Kiwix setup script with multiple ZIM support
 
 echo "=============================="
