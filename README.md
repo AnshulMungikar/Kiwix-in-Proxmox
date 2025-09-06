@@ -15,17 +15,32 @@ Kiwix is an open-source software that lets you access websites and educational c
 - The container should be unprivileged.
 
 ### 3. Setup Steps
+## Quick Install
 
-#### Changing the name server for the proxmox container
+You don’t need to clone this repo manually.  
+Just run the script directly with one command:
 
 ```
-nano /etc/resolv.conf
-nameserver 8.8.8.8
-nameserver 8.8.4.4
+bash <(curl -s https://raw.githubusercontent.com/AnshulMungikar/Kiwix-in-Proxmox/main/setup-kiwix.sh)
 ```
+OR
+```
+bash <(wget -qO- https://raw.githubusercontent.com/AnshulMungikar/Kiwix-in-Proxmox/main/setup-kiwix.sh)
+```
+## Overview
+
+#### Set DNS if not there
+```
+echo "== Step 1: Updating nameservers =="
+if command -v resolvectl >/dev/null 2>&1; then
+  resolvectl dns eth0 8.8.8.8 8.8.4.4
+else
+  echo "Warning: resolvectl not found. Skipping DNS configuration."
+fi
 
 #### Installing kiwix server in container
-
+```
+#### Installing necessary tools
 ```
 apt install kiwix
 sudo apt install kiwix-tools
